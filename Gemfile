@@ -64,3 +64,7 @@ end
 
 # Gemfile for Pagination
 gem 'will_paginate', '>= 3.1'
+
+
+# Gemfile for Font Awesome
+gem "font-awesome-rails"
