@@ -21,11 +21,18 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	background: image_url('qbkls');
 	font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-	
+
 }
 
 .navbar {
 	background: image_url('dark-hex');
 	box-shadow: 0px 1px 3px #2a2a2a;
 
+}
+
+.navbar-inverse .navbar-brand {
+	color: #C4C40E;
+	font-family: 'chunkfiveroman', sans-serif;
+	font-size:26px;
+	
 }
