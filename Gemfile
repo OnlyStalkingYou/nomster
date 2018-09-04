@@ -71,3 +71,9 @@ gem "font-awesome-rails"
 
 # Encryption for user login
 gem 'devise'
+
+# converts address to lat and long for mapping
+gem "geocoder"
+
+# allows me to add values the the ENV
+gem "figaro"
