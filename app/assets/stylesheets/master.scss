@@ -75,3 +75,13 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+img  {
+  height: 300px;
+  width: 300px;
+  max-height: 250px;
+  max-width: 250px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  float: right;
+}

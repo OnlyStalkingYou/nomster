@@ -77,3 +77,7 @@ gem "geocoder"
 
 # allows me to add values the the ENV
 gem "figaro"
+# image field
+gem 'carrierwave', '~> 1.0'
+# carrierwave to s3
+gem "fog-aws"
