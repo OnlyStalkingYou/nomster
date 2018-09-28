@@ -6,29 +6,30 @@
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
-	<script>
 
-	  function initMap() {
-		var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
-		var map = new google.maps.Map(document.getElementById('map'), {
-		  zoom: 12,
-		  center: myLatLng
-		});
+	<div id="myMap"></div>
+	<script type='text/javascript'>
+        function GetMap() {
+        	var map = new Microsoft.Maps.Map('#myMap', {
+                credentials: 'Aj154AgU7PjtzFv_kVDuKHmnbknVMem18VaJa8WkClnG3f_PUW71admYXcGk59sU',
+                zoom: 13,
+                center: new Microsoft.Maps.Location(<%= @place.latitude %>, <%= @place.longitude %>)
+            });
+            
+            var center = map.getCenter();
 
-		var marker = new google.maps.Marker({
-		  position: myLatLng,
-		  map: map,
-		  title: 'Hello World!'
-		});
-	  }
-	</script>
+	        //Create custom Pushpin
+	        var pin = new Microsoft.Maps.Pushpin(center, {
+	            title: '<%= @place.name %>',
+	        });
 
-	<script async defer
-  	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOOIyoxLjWXokgv0YvgMA8qcc16UR9Soc&callback=initMap">
+	        //Add the pushpin to the map
+	        map.entities.push(pin);
+	        }
     </script>
-
-	<div id="map"></div>
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+	
   <% end %>
 
   <br />
