@@ -5,6 +5,4 @@ class ApplicationMailer < ActionMailer::Base
   	mail(to: "onlystalkingyou@hotmail.com",
          subject: "A comment has been added to your place")
   end
-
-  layout 'mailer'
 end
