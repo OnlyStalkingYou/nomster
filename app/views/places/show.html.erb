@@ -4,6 +4,18 @@
 	<br /><br />
 	<p><%= @place.description %></p>
 
+  <div class="clear"></div>
+  <div class="row">
+    <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <% if photo.picture.present? %>
+      <%= image_tag photo.picture, class: "img" %>
+      <% end %>
+      <h2 class="text-center"><%= photo.caption %></h2>
+    </div>
+    <% end %>
+  </div>
+
   <% if @place.latitude.present? && @place.longitude.present? %>
 
 
@@ -28,7 +40,7 @@
 	        map.entities.push(pin);
 	        }
     </script>
-    
+
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
 	
   <% end %>
@@ -128,15 +140,5 @@
 </div>
 <br />
                                                                                                 
-<div class="clear"></div>
-<div class="row">
-<% @place.photos.each do |photo| %>
- <div class="col-12 col-sm-6">
-    <% if photo.picture.present? %>
-    <%= image_tag photo.picture, class: "img" %>
-      <% end %>
-        <h2 class="text-center"><%= photo.caption %></h2>
-      </div>
-    <% end %>
-</div>
+
 <!-- End of Photos Modal -->
