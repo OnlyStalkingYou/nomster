@@ -76,15 +76,6 @@ blockquote p {
   display: inline;
 }
 
-img  {
-  height: 300px;
-  width: 300px;
-  max-height: 250px;
-  max-width: 250px;
-  margin-right: 0px;
-  margin-bottom: 10px;
-  float: right;
-}
 
 .carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
   max-height: 550px;
@@ -105,4 +96,17 @@ img  {
 
 .carousel {
 	box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.display_inline {
+	display: inline-block;
+}
+
+.display_inherit {
+	display: inherit;
+}
+
+.mini-img {
+	height: 180px;
+	width: auto;
 }
