@@ -38,10 +38,18 @@
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
   	<div class="display_inline">
-	    <h1><%= link_to place.name, place_path(place) %></h1><br />	    
-	    <i><%= place.address %></i><br /><br />
-	    <p><%= place.description %></p><br />
+	    <h1><%= link_to place.name, place_path(place) %></h1><br />   
 
+      <% if place.photos.present? && place.photos.first.picture.present? %>   
+        <div class="display_inline pull-right">
+        <%= image_tag place.photos.first.picture, class: "mini-img" %>
+        </div>
+      <% end %>
+
+	    <i><%= place.address %></i><br /><br />
+      <div class="col-sm-6 border">
+	      <p class="align"><%= place.description %></p><br />
+      </div>
 
 	    <% if place.user.present? %>
 	    	<small><%= place.user.email %></small>
@@ -49,11 +57,7 @@
 	</div>
 
 
-	<% if place.photos.present? && place.photos.first.picture.present? %>		
-	  <div class="display_inline pull-right">
-		<%= image_tag place.photos.first.picture, class: "mini-img" %>
-	  </div>
-  	<% end %>
+
 
 
 	<% if place.comments.present? %>	

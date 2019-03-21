@@ -107,10 +107,15 @@ blockquote p {
 }
 
 .mini-img {
-	height: 150px;
+	position: absolute;
+	right: 15px;
+	height: 250px;
 	width: auto;
+	padding: 10px;
 }
 
-.p {
-	margin: 0;
+.border {
+	left: 0px;
+	width: auto;
+	border: 3px solid #73AD21;
 }
